@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<head>
+
+<script>
+function startTime() {
+    var today=new Date();
+    var h=today.getHours();
+    var m=today.getMinutes();
+    var s=today.getSeconds();
+    m = checkTime(m);
+    s = checkTime(s);
+    document.getElementById('indiaTime').innerHTML = h+":"+m+":"+s;
+    var t = setTimeout(function(){startTime()},500);
+}
+
+function checkTime(i) {
+    if (i<10) {i = "0" + i};  // add zero in front of numbers < 10
+    return i;
+}
+
+function go() 
+{ 
+window.location=document.getElementById("menu").value 
+} 
+
+
+</script>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+<!-- <link rel="stylesheet" href="css/xmen.css" type="text/css" media="all" /> -->
+<style type="text/css">
+  * { padding:0; margin:1px; outline:0; }
+body {
+
+  font-family: "Trebuchet MS", Arial, sans-serif;
+  font-size:12px;
+  line-height:16px;
+  color:#636363;
+  
+}
+.cl { font-size:0;  clear:both; display:block; height:0; }
+
+.shell #locations { width:960px; margin-top:20px; padding-left:40px; background:#fff; background-color: transparent;  }
+
+#indiaTime {
+
+  width: 114px;
+  height: 44px;
+  padding: 10px 0 0 46px;
+  top: 377px;
+  color: red;
+  font-size: 16px;
+  font-weight: bold;
+
+}
+
+
+#ab .aa img {float:center; padding-top:25px;}
+
+#mn{text-align: left;color: red; font-size:20px;}
+ 
+
+</style>
+</head>
+<p id="mn"> Indian Time </p>
+
+<body onload="startTime()">
+
+	<div class="shell">
+
+	<div id="indiaTime"></div>
+
+	<form class="nn" > 
+	<select id="menu" onchange="go()"> 
+  <option>Choose Location</option> 
+  <option value="images/mysore.png">Mysore</option> 
+  <option value="images/denver.png">Denver</option> 
+  <option value="images/dubai.png">Dubai</option>
+  <option value="images/costa rica.png">Costa Rica </option> 
+	</select> 
+	</form> 
+
+
+	<div id="main"></div>
+    <div class="cl">&nbsp;</div>
+
+        <img src="images/map.png" style="padding-left:300px;float:center;" >
+        </div>
+      </div>
+
+
+ 		
+		</div>
+
+
+     
+</div>
+<!-- End Shell -->
+</div>
+</body>
+</html>
